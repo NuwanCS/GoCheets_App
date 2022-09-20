@@ -15,24 +15,24 @@ const BookingForm = () => {
       <section className=" d-flex justify-content-center align-items-center">
     <Form className="w-70 square border bg-light rounded" onSubmit={submitHandler}>
       <FormGroup className=" m-2 signup__form d-inline-block me-4 mb-4">
-        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="First Name" required/>
       </FormGroup>
       <FormGroup className=" m-2 signup__form d-inline-block ms-1 mb-4">
-        <input type="text" placeholder="Last Name" />
+        <input type="text" placeholder="Last Name" required/>
       </FormGroup>
 
       <FormGroup className=" m-2 signup__form d-inline-block me-4 mb-4">
-        <input type="email" placeholder="Email" />
+        <input type="email" placeholder="Email" required/>
       </FormGroup>
       <FormGroup className=" m-2 signup__form d-inline-block ms-1 mb-4">
-        <input type="number" placeholder="Phone Number" />
+        <input type="password" placeholder="Password" required/>
       </FormGroup>
 
       <FormGroup className=" m-2 signup__form d-inline-block me-4 mb-4">
-        <input type="text" placeholder="From Address" />
+        <input type="number" placeholder="Phone number" required/>
       </FormGroup>
       <FormGroup className=" m-2 signup__form d-inline-block ms-1 mb-4">
-        <input type="text" placeholder="To Address" />
+        <input type="text" placeholder="Address" required/>
       </FormGroup>
 
 
