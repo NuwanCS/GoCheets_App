@@ -57,8 +57,8 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center mb-5">
-              <h6 className="section__subtitle">Come with</h6>
-              <h2 className="section__title">Hot Offers</h2>
+              <h6 className="section__subtitle">Checkout our</h6>
+              <h2 className="section__title">Car Fleet</h2>
             </Col>
 
             {carData.slice(0, 6).map((item) => (
