@@ -44,10 +44,7 @@ const Footer = () => {
               </h1>
             </div>
             <p className="footer__logo-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur, distinctio, itaque reiciendis ab cupiditate harum ex
-              quam veniam, omnis expedita animi quibusdam obcaecati mollitia?
-              Delectus et ad illo recusandae temporibus?
+            GoCheeta Taxi Service is a seamless transport solution that arrives within minutes to wherever you are, featuring the best rates and a fleet of vehicles in Sri Lanka including Cars, SUV, and Vans offering you comfort and safety throughout the journey.
             </p>
           </Col>
 
