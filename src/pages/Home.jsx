@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import HeroSlider from "../components/UI/HeroSlider";
 import Helmet from "../components/Helmet/Helmet";
@@ -10,11 +10,60 @@ import ServicesList from "../components/UI/ServicesList";
 import carData from "../assets/data/carData";
 import CarItem from "../components/UI/CarItem";
 import BecomeDriverSection from "../components/UI/BecomeDriverSection";
-import Testimonial from "../components/UI/Testimonial";
-
-import BlogList from "../components/UI/BlogList";
+import Api from '../api/api';
 
 const Home = () => {
+
+  const [carSelect, setCarSelect] = useState([])
+  const [streetSelect, setStreetSelect] = useState([])
+  const [citySelect, setCitySelect] = useState([])
+  const [selectedCity, setSelectedCity] = useState(null);
+
+  const getCars = async () => {
+
+    try {
+      await Api.cars.getcars().then(res=> {
+        setCarSelect(res.data)
+
+      })
+      
+    } catch (err) {
+      console.log(err);  
+    }
+  };
+
+  const getStreets = async () => {
+
+    try {
+      await Api.street.getstreets().then(res=> {
+        setStreetSelect(res.data)
+
+      })
+      
+    } catch (err) {
+      console.log(err);  
+    }
+  };
+
+  const getCity = async () => {
+
+    try {
+      await Api.city.getcities().then(res=> {
+        setCitySelect(res.data)
+
+      })
+      
+    } catch (err) {
+      console.log(err);  
+    }
+  };
+
+
+  useEffect(()=>{
+    getCars()
+    getStreets()
+    getCity()
+  }, [])
   return (
     <Helmet title="Home">
       {/* ============= hero section =========== */}
@@ -31,7 +80,12 @@ const Home = () => {
               </Col>
 
               <Col lg="8" md="8" sm="12">
-                <FindCarForm />
+                <FindCarForm 
+                carSelect={carSelect} 
+                streetSelect={streetSelect} 
+                citySelect={citySelect}
+                setSelectedCity={setSelectedCity}
+                />
               </Col>
             </Row>
           </Container>
